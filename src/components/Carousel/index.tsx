@@ -1,5 +1,5 @@
 import { Sun } from 'phosphor-react'
-import { CarouselCard, CarouselContainer } from './styles'
+import { CarouselCard, CarouselContainer, ColorInfo } from './styles'
 
 export function Carousel() {
   return (
@@ -21,31 +21,45 @@ export function Carousel() {
           <table>
             <tr>
               <h4>Temperatura:</h4>
-              <td>
-                <span>18º</span> <span>28º</span>
-              </td>
+
+              <ColorInfo variant="min">
+                <td>
+                  <span> 18º</span>
+                </td>
+              </ColorInfo>
+
+              <ColorInfo variant="max">
+                <td>
+                  <span> 30º</span>
+                </td>
+              </ColorInfo>
             </tr>
             <hr />
             <tr>
               <h4>Umidade:</h4>
-
-              <td>
-                <span>28% - 31%</span>
-              </td>
+              <ColorInfo variant="umidade">
+                <td>
+                  <span>28% - 31%</span>
+                </td>
+              </ColorInfo>
             </tr>
             <hr />
             <tr>
               <h4>Sol:</h4>
-              <td>
-                <span>06:30 - 18:30</span>
-              </td>
+              <ColorInfo variant="nascer/pordosol">
+                <td>
+                  <span>06:30 - 18:30</span>
+                </td>
+              </ColorInfo>
             </tr>
             <hr />
             <tr>
               <h4>Chuva:</h4>
-              <td>
-                <span>28%</span>
-              </td>
+              <ColorInfo variant="chuva">
+                <td>
+                  <span>28%</span>
+                </td>
+              </ColorInfo>
             </tr>
             <hr />
           </table>
@@ -68,31 +82,45 @@ export function Carousel() {
           <table>
             <tr>
               <h4>Temperatura:</h4>
-              <td>
-                <span>18º</span> <span>28º</span>
-              </td>
+
+              <ColorInfo variant="min">
+                <td>
+                  <span> 18º</span>
+                </td>
+              </ColorInfo>
+
+              <ColorInfo variant="max">
+                <td>
+                  <span> 30º</span>
+                </td>
+              </ColorInfo>
             </tr>
             <hr />
             <tr>
               <h4>Umidade:</h4>
-
-              <td>
-                <span>28% - 31%</span>
-              </td>
+              <ColorInfo variant="umidade">
+                <td>
+                  <span>28% - 31%</span>
+                </td>
+              </ColorInfo>
             </tr>
             <hr />
             <tr>
               <h4>Sol:</h4>
-              <td>
-                <span>06:30 - 18:30</span>
-              </td>
+              <ColorInfo variant="nascer/pordosol">
+                <td>
+                  <span>06:30 - 18:30</span>
+                </td>
+              </ColorInfo>
             </tr>
             <hr />
             <tr>
               <h4>Chuva:</h4>
-              <td>
-                <span>28%</span>
-              </td>
+              <ColorInfo variant="chuva">
+                <td>
+                  <span>28%</span>
+                </td>
+              </ColorInfo>
             </tr>
             <hr />
           </table>
@@ -115,31 +143,45 @@ export function Carousel() {
           <table>
             <tr>
               <h4>Temperatura:</h4>
-              <td>
-                <span>18º</span> <span>28º</span>
-              </td>
+
+              <ColorInfo variant="min">
+                <td>
+                  <span> 18º</span>
+                </td>
+              </ColorInfo>
+
+              <ColorInfo variant="max">
+                <td>
+                  <span> 30º</span>
+                </td>
+              </ColorInfo>
             </tr>
             <hr />
             <tr>
               <h4>Umidade:</h4>
-
-              <td>
-                <span>28% - 31%</span>
-              </td>
+              <ColorInfo variant="umidade">
+                <td>
+                  <span>28% - 31%</span>
+                </td>
+              </ColorInfo>
             </tr>
             <hr />
             <tr>
               <h4>Sol:</h4>
-              <td>
-                <span>06:30 - 18:30</span>
-              </td>
+              <ColorInfo variant="nascer/pordosol">
+                <td>
+                  <span>06:30 - 18:30</span>
+                </td>
+              </ColorInfo>
             </tr>
             <hr />
             <tr>
               <h4>Chuva:</h4>
-              <td>
-                <span>28%</span>
-              </td>
+              <ColorInfo variant="chuva">
+                <td>
+                  <span>28%</span>
+                </td>
+              </ColorInfo>
             </tr>
             <hr />
           </table>

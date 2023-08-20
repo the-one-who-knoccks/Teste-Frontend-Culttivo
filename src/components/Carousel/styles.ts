@@ -11,11 +11,11 @@ export const CarouselContainer = styled.section`
   gap: 2rem;
 `
 
-interface CarouselCardProps {
-  variant?: 'green'
+interface ColorInfoProps {
+  variant?: 'min' | 'max' | 'umidade' | 'nascer/pordosol' | 'chuva'
 }
 
-export const CarouselCard = styled.div<CarouselCardProps>`
+export const CarouselCard = styled.div`
   background: ${(props) => props.theme.white};
   border-radius: 20px;
   padding: 2rem;
@@ -62,34 +62,68 @@ export const CarouselCard = styled.div<CarouselCardProps>`
       display: flex;
       justify-content: space-between;
       align-items: self-start;
-      margin-bottom: 1.8rem;
+      margin-bottom: 2.3rem;
 
       h4 {
         color: ${(props) => props.theme['cinza-300']};
-      }
-
-      span {
-        border: 1px solid;
-        border-radius: 0.3rem;
-        padding: 0.3rem 0.5rem 0.3rem;
-        border-left-width: 0.35rem;
- 
-      }
-
+        margin-top: 0.5rem;
+      }     
   }
 
   table hr {
   
     position: relative;
-    bottom: 1rem;
+    bottom: 1.2rem;
     border-color: ${(props) => props.theme['cinza-100']};
   }
 
 
+`
+
+export const ColorInfo = styled.span<ColorInfoProps>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid;
+  border-radius: 0.3rem;
+  padding: 0.5rem 0.5rem 0.3rem;
+  border-left-width: 0.35rem;
+  width: 45%;
 
   ${(props) =>
-    props.variant === 'green' &&
+    props.variant === 'max' &&
     css`
-      span: ${props.theme['green-500']};
+      background: ${(props) => props.theme['vermelho-100']};
+      color: ${(props) => props.theme['vermelho-200']};
+      width: 20%;
     `}
+  ${(props) =>
+    props.variant === 'min' &&
+    css`
+      background: ${(props) => props.theme['azul-100']};
+      color: ${(props) => props.theme['azul-300']};
+      margin-left: 2rem;
+      width: 20%;
+    `}
+    ${(props) =>
+    props.variant === 'umidade' &&
+    css`
+      background: ${(props) => props.theme['verde-300']};
+      color: ${(props) => props.theme['verde-200']};
+    `};
+
+  ${(props) =>
+    props.variant === 'nascer/pordosol' &&
+    css`
+      background: ${(props) => props.theme['laranja-100']};
+      color: ${(props) => props.theme['laranja-200']};
+    `};
+
+  ${(props) =>
+    props.variant === 'chuva' &&
+    css`
+      background: ${(props) => props.theme['cinza-600']};
+      color: ${(props) => props.theme['cinza-700']};
+    `};
 `
