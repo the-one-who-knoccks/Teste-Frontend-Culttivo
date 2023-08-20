@@ -1,5 +1,10 @@
-import { Sun } from 'phosphor-react'
-import { CarouselCard, CarouselContainer, ColorInfo } from './styles'
+import { Sun, Warning, WarningCircle } from 'phosphor-react'
+import {
+  CarouselCard,
+  CarouselContainer,
+  ColorInfo,
+  WarningCard,
+} from './styles'
 
 export function Carousel() {
   return (
@@ -63,6 +68,13 @@ export function Carousel() {
             </tr>
             <hr />
           </table>
+          <WarningCard variant="superior">
+            <span>
+              <Warning size={40} />
+              Temperatura máxima deste dia será superior a máxima média do
+              período.
+            </span>
+          </WarningCard>
         </header>
       </CarouselCard>
       <CarouselCard>
@@ -124,6 +136,13 @@ export function Carousel() {
             </tr>
             <hr />
           </table>
+          <WarningCard variant="inferior">
+            <span>
+              <Warning size={40} />
+              Temperatura máxima deste dia será superior a máxima média do
+              período.
+            </span>
+          </WarningCard>
         </header>
       </CarouselCard>
       <CarouselCard>
@@ -185,6 +204,13 @@ export function Carousel() {
             </tr>
             <hr />
           </table>
+          <WarningCard variant="superior">
+            <span>
+              <WarningCircle size={40} />
+              Temperatura máxima deste dia será superior a máxima média do
+              período.
+            </span>
+          </WarningCard>
         </header>
       </CarouselCard>
     </CarouselContainer>
