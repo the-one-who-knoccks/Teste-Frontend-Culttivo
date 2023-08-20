@@ -63,11 +63,20 @@ export const CarouselCard = styled.div`
       justify-content: space-between;
       align-items: self-start;
       margin-bottom: 2.3rem;
+    }
 
-      h4 {
-        color: ${(props) => props.theme['cinza-300']};
-        margin-top: 0.5rem;
-      }
+    tbody tr.line {
+      content: ' ';
+      display: block;
+      border-bottom: 2px solid ${(props) => props.theme['cinza-200']};
+      margin: -0.2rem;
+      position: relative;
+      bottom: 1.2rem;
+    }
+
+    table tr th {
+      color: ${(props) => props.theme['cinza-300']};
+      margin-top: 0.5rem;
     }
 
     table hr {
@@ -78,7 +87,7 @@ export const CarouselCard = styled.div`
   }
 `
 
-export const ColorInfo = styled.span<ColorInfoProps>`
+export const ColorInfo = styled.td<ColorInfoProps>`
   display: flex;
   justify-content: center;
   align-items: center;

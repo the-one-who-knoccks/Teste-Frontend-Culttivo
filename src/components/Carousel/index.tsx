@@ -1,4 +1,4 @@
-import { Sun, Warning, WarningCircle } from 'phosphor-react'
+import { Sun, Warning } from 'phosphor-react'
 import {
   CarouselCard,
   CarouselContainer,
@@ -24,49 +24,40 @@ export function Carousel() {
           </article>
 
           <table>
-            <tr>
-              <h4>Temperatura:</h4>
+            <tbody>
+              <tr>
+                <th>Temperatura:</th>
 
-              <ColorInfo variant="min">
-                <td>
-                  <span> 18º</span>
-                </td>
-              </ColorInfo>
+                <ColorInfo variant="min">18º</ColorInfo>
 
-              <ColorInfo variant="max">
-                <td>
-                  <span> 30º</span>
-                </td>
-              </ColorInfo>
-            </tr>
-            <hr />
-            <tr>
-              <h4>Umidade:</h4>
-              <ColorInfo variant="umidade">
-                <td>
-                  <span>28% - 31%</span>
-                </td>
-              </ColorInfo>
-            </tr>
-            <hr />
-            <tr>
-              <h4>Sol:</h4>
-              <ColorInfo variant="nascer/pordosol">
-                <td>
-                  <span>06:30 - 18:30</span>
-                </td>
-              </ColorInfo>
-            </tr>
-            <hr />
-            <tr>
-              <h4>Chuva:</h4>
-              <ColorInfo variant="chuva">
-                <td>
-                  <span>28%</span>
-                </td>
-              </ColorInfo>
-            </tr>
-            <hr />
+                <ColorInfo variant="max">30º</ColorInfo>
+              </tr>
+              <tr className="line" />
+            </tbody>
+
+            <tbody>
+              <tr>
+                <th>Umidade:</th>
+                <ColorInfo variant="umidade">28% - 31%</ColorInfo>
+              </tr>
+              <tr className="line" />
+            </tbody>
+
+            <tbody>
+              <tr>
+                <th>Sol:</th>
+                <ColorInfo variant="nascer/pordosol">06:30 - 18:30</ColorInfo>
+              </tr>
+              <tr className="line" />
+            </tbody>
+
+            <tbody>
+              <tr>
+                <th>Chuva:</th>
+                <ColorInfo variant="chuva">28%</ColorInfo>
+              </tr>
+              <tr className="line" />
+            </tbody>
           </table>
           <WarningCard variant="superior">
             <span>
@@ -92,49 +83,40 @@ export function Carousel() {
           </article>
 
           <table>
-            <tr>
-              <h4>Temperatura:</h4>
+            <tbody>
+              <tr>
+                <th>Temperatura:</th>
 
-              <ColorInfo variant="min">
-                <td>
-                  <span> 18º</span>
-                </td>
-              </ColorInfo>
+                <ColorInfo variant="min">18º</ColorInfo>
 
-              <ColorInfo variant="max">
-                <td>
-                  <span> 30º</span>
-                </td>
-              </ColorInfo>
-            </tr>
-            <hr />
-            <tr>
-              <h4>Umidade:</h4>
-              <ColorInfo variant="umidade">
-                <td>
-                  <span>28% - 31%</span>
-                </td>
-              </ColorInfo>
-            </tr>
-            <hr />
-            <tr>
-              <h4>Sol:</h4>
-              <ColorInfo variant="nascer/pordosol">
-                <td>
-                  <span>06:30 - 18:30</span>
-                </td>
-              </ColorInfo>
-            </tr>
-            <hr />
-            <tr>
-              <h4>Chuva:</h4>
-              <ColorInfo variant="chuva">
-                <td>
-                  <span>28%</span>
-                </td>
-              </ColorInfo>
-            </tr>
-            <hr />
+                <ColorInfo variant="max">30º</ColorInfo>
+              </tr>
+              <tr className="line" />
+            </tbody>
+
+            <tbody>
+              <tr>
+                <th>Umidade:</th>
+                <ColorInfo variant="umidade">28% - 31%</ColorInfo>
+              </tr>
+              <tr className="line" />
+            </tbody>
+
+            <tbody>
+              <tr>
+                <th>Sol:</th>
+                <ColorInfo variant="nascer/pordosol">06:30 - 18:30</ColorInfo>
+              </tr>
+              <tr className="line" />
+            </tbody>
+
+            <tbody>
+              <tr>
+                <th>Chuva:</th>
+                <ColorInfo variant="chuva">28%</ColorInfo>
+              </tr>
+              <tr className="line" />
+            </tbody>
           </table>
           <WarningCard variant="inferior">
             <span>
@@ -160,53 +142,44 @@ export function Carousel() {
           </article>
 
           <table>
-            <tr>
-              <h4>Temperatura:</h4>
+            <tbody>
+              <tr>
+                <th>Temperatura:</th>
 
-              <ColorInfo variant="min">
-                <td>
-                  <span> 18º</span>
-                </td>
-              </ColorInfo>
+                <ColorInfo variant="min">18º</ColorInfo>
 
-              <ColorInfo variant="max">
-                <td>
-                  <span> 30º</span>
-                </td>
-              </ColorInfo>
-            </tr>
-            <hr />
-            <tr>
-              <h4>Umidade:</h4>
-              <ColorInfo variant="umidade">
-                <td>
-                  <span>28% - 31%</span>
-                </td>
-              </ColorInfo>
-            </tr>
-            <hr />
-            <tr>
-              <h4>Sol:</h4>
-              <ColorInfo variant="nascer/pordosol">
-                <td>
-                  <span>06:30 - 18:30</span>
-                </td>
-              </ColorInfo>
-            </tr>
-            <hr />
-            <tr>
-              <h4>Chuva:</h4>
-              <ColorInfo variant="chuva">
-                <td>
-                  <span>28%</span>
-                </td>
-              </ColorInfo>
-            </tr>
-            <hr />
+                <ColorInfo variant="max">30º</ColorInfo>
+              </tr>
+              <tr className="line" />
+            </tbody>
+
+            <tbody>
+              <tr>
+                <th>Umidade:</th>
+                <ColorInfo variant="umidade">28% - 31%</ColorInfo>
+              </tr>
+              <tr className="line" />
+            </tbody>
+
+            <tbody>
+              <tr>
+                <th>Sol:</th>
+                <ColorInfo variant="nascer/pordosol">06:30 - 18:30</ColorInfo>
+              </tr>
+              <tr className="line" />
+            </tbody>
+
+            <tbody>
+              <tr>
+                <th>Chuva:</th>
+                <ColorInfo variant="chuva">28%</ColorInfo>
+              </tr>
+              <tr className="line" />
+            </tbody>
           </table>
           <WarningCard variant="superior">
             <span>
-              <WarningCircle size={40} />
+              <Warning size={40} />
               Temperatura máxima deste dia será superior a máxima média do
               período.
             </span>

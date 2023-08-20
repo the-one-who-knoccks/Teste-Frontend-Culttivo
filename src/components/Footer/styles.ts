@@ -7,5 +7,6 @@ export const FooterContainer = styled.header`
     padding: 0.8rem;
     width: 100%;
     max-width: 1120px;
+    margin-top: 4rem;
   }
 `
