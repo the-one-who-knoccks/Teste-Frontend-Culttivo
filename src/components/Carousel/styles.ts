@@ -19,7 +19,6 @@ export const CarouselCard = styled.div<CarouselCardProps>`
   background: ${(props) => props.theme.white};
   border-radius: 20px;
   padding: 2rem;
-
   box-shadow: 1px -2px 12px 4px rgba(239, 239, 239, 255);
   border: 1px solid ${(props) => props.theme['cinza-200']};
 
@@ -27,7 +26,6 @@ export const CarouselCard = styled.div<CarouselCardProps>`
     display: grid;
     align-items: center;
     justify-content: center;
-
     color: ${(props) => props.theme['cinza-400']};
 
     

@@ -1,5 +1,4 @@
 import { ThemeProvider } from 'styled-components'
-
 import { Main } from './pages/Main'
 import { defaultTheme } from './styles/themes/default'
 import { GlobalStyle } from './styles/global'
