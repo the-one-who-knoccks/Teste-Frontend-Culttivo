@@ -8,9 +8,8 @@ export const GlobalStyle = createGlobalStyle`
 
  }
 
-
-
   body {
+    width: 100%;
     -webkit-font-smoothing: antialiased;
   }
 
