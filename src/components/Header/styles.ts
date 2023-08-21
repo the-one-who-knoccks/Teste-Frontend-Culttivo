@@ -2,13 +2,10 @@ import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
   background: ${(props) => props.theme['cinza-100']};
-  padding: 2.5rem 0 7.5rem;
 `
 
 export const HeaderContent = styled.div`
-  width: 100%;
-  max-width: 1120px;
-  margin: 0 auto;
+  margin-bottom: 5rem;
   padding: 2rem;
 
   display: flex;

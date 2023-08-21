@@ -1,14 +1,17 @@
 import styled, { css } from 'styled-components'
 
-export const CarouselContainer = styled.section`
-  width: 100%;
-  max-width: 1120px;
-  margin-bottom: 1rem;
-  padding: 0 0.5rem;
+export const Container = styled.section`
+  width: 1090px;
 
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  div {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
 `
 
 interface ColorInfoProps {
@@ -20,20 +23,27 @@ interface WarningCardProps {
 }
 
 export const CarouselCard = styled.div`
+  width: 21rem;
+
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  margin-left: 1.5rem;
+  flex: none;
+
   background: ${(props) => props.theme.white};
   border-radius: 20px;
   padding: 2rem;
-  margin-top: -4rem;
-  box-shadow: 1px -2px 12px 4px rgba(239, 239, 239, 255);
+  box-shadow: -1px -1px 12px 2px rgba(0, 0, 0, 0.3)}
   border: 1px solid ${(props) => props.theme['cinza-200']};
 
   header {
     display: grid;
+
     align-items: center;
     justify-content: center;
     color: ${(props) => props.theme['cinza-400']};
 
-    > div {
+    div {
       display: flex;
       align-items: center;
       justify-content: space-evenly;
