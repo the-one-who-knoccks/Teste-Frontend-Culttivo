@@ -1,9 +1,9 @@
 import { ArrowLeft, ArrowRight, Sun, Warning } from 'phosphor-react'
 import { CarouselCard, Container, ColorInfo, WarningCard } from './styles'
-import { FormEvent, useRef } from 'react'
+import { FormEvent, MutableRefObject, useRef } from 'react'
 
 export function Carousel() {
-  const carrossel = useRef(undefined)
+  const carrossel = useRef() as MutableRefObject<HTMLDivElement>
 
   const clicarParaEsquerda = (e: FormEvent) => {
     e.preventDefault()
