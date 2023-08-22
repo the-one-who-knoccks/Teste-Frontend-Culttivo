@@ -1,7 +1,8 @@
-import { ArrowLeft, ArrowRight, Rainbow, Sun, Warning } from 'phosphor-react'
-import { CarouselCard, Container, ColorInfo, WarningCard } from './styles'
+import { ArrowLeft, ArrowRight, Sun } from 'phosphor-react'
+import { CarouselCard, Container, ColorInfo } from './styles'
 import { FormEvent, MutableRefObject, useEffect, useRef, useState } from 'react'
 import axios from 'axios'
+import Alert from '../WarningCards'
 
 interface WeatherData {
   id: string
@@ -43,6 +44,7 @@ interface WeatherData {
 export function Carousel() {
   const carrossel = useRef() as MutableRefObject<HTMLDivElement>
   const [dados, setarDados] = useState<WeatherData[]>([])
+
   useEffect(() => {
     axios
       .get(
@@ -53,8 +55,6 @@ export function Carousel() {
         const dataAsArray = Object.values(responseData)
 
         setarDados(dataAsArray)
-
-        console.log(dataAsArray)
       })
       .catch((error) => {
         console.error('Error fetching data:', error)
@@ -84,13 +84,13 @@ export function Carousel() {
         <ArrowRight />
       </button>
       <div className="carousel" ref={carrossel}>
-        {dados.map((item) => (
-          <CarouselCard key={item.id}>
+        {dados.map((item, i) => (
+          <CarouselCard key={i}>
             <header>
               <Sun size={30} color="#ccc000" />
               <div>
                 <strong>{item.date_br}</strong>
-                <p>Terça-feira</p>
+                <p></p>
               </div>
 
               <article>{item.text_icon.text.phrase.reduced}</article>
@@ -125,7 +125,8 @@ export function Carousel() {
                   <tr>
                     <th>Sol:</th>
                     <ColorInfo variant="nascer/pordosol">
-                      {item.sun.sunrise} - {item.sun.sunset}
+                      {item.sun.sunrise.toString().substring(0, 5)} -{' '}
+                      {item.sun.sunset.toString().substring(0, 5)}
                     </ColorInfo>
                   </tr>
                   <tr className="line" />
@@ -141,11 +142,7 @@ export function Carousel() {
                   <tr className="line" />
                 </tbody>
               </table>
-              <WarningCard variant="inferior">
-                <Warning className="warning" size={60} />
-                Temperatura máxima deste dia será superior a máxima média do
-                período.
-              </WarningCard>
+              <Alert />
             </header>
           </CarouselCard>
         ))}

@@ -18,13 +18,9 @@ interface ColorInfoProps {
   variant?: 'min' | 'max' | 'umidade' | 'nascer/pordosol' | 'chuva'
 }
 
-interface WarningCardProps {
-  variant?: 'superior' | 'inferior'
-}
-
 export const CarouselCard = styled.div`
   width: 21rem;
-  height: 80%;
+
   margin-bottom: 1rem;
   margin-top: 2rem;
   margin-left: 1.5rem;
@@ -38,9 +34,11 @@ export const CarouselCard = styled.div`
 
   header {
     display: grid;
+    margin-top: -2rem;
 
     align-items: center;
     justify-content: center;
+
     color: ${(props) => props.theme['cinza-400']};
 
     svg {
@@ -65,12 +63,13 @@ export const CarouselCard = styled.div`
     }
 
 
-
     article {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
+      margin-top: 2.5rem;
+      margin-bottom: 0.5rem;
+      height: 3.5rem;
+
       padding: 0.5rem 0.5rem 0.5rem 1rem;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       color: ${(props) => props.theme['cinza-300']};
       background: ${(props) => props.theme['cinza-200']};
       border-radius: 10px;
@@ -93,6 +92,8 @@ export const CarouselCard = styled.div`
       position: relative;
       bottom: 1.2rem;
     }
+
+    
 
     table tr th {
       color: ${(props) => props.theme['cinza-300']};
@@ -152,38 +153,5 @@ export const ColorInfo = styled.td<ColorInfoProps>`
     css`
       background: ${(props) => props.theme['cinza-600']};
       color: ${(props) => props.theme['cinza-700']};
-    `};
-`
-
-export const WarningCard = styled.span<WarningCardProps>`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.5rem -1rem 0.5rem 1rem;
-  font-size: 0.8rem;
-  border-radius: 5px;
-  border: 1px solid;
-  border-left-width: 0.45rem;
-  font-weight: 500;
-  font-size: 0.7rem;
-
-  svg.warning {
-    position: relative;
-    top: 0;
-    margin-right: 2rem;
-  }
-
-  ${(props) =>
-    props.variant === 'superior' &&
-    css`
-      color: ${(props) => props.theme['vermelho-300']};
-      background: ${(props) => props.theme['vermelho-100']};
-    `};
-
-  ${(props) =>
-    props.variant === 'inferior' &&
-    css`
-      color: ${(props) => props.theme['azul-400']};
-      background: ${(props) => props.theme['azul-200']};
     `};
 `
