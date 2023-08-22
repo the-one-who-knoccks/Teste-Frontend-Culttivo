@@ -24,7 +24,7 @@ interface WarningCardProps {
 
 export const CarouselCard = styled.div`
   width: 21rem;
-
+  height: 80%;
   margin-bottom: 1rem;
   margin-top: 2rem;
   margin-left: 1.5rem;
@@ -43,29 +43,39 @@ export const CarouselCard = styled.div`
     justify-content: center;
     color: ${(props) => props.theme['cinza-400']};
 
+    svg {
+     position: relative;
+     top: 2rem;
+     left: 1rem;
+    }
+
     div {
-      display: flex;
-      align-items: center;
-      justify-content: space-evenly;
+      display: grid;
+      margin: 0 auto;
+
+      strong {
+        font-size: 1.3rem;
+      }
+  
+      p {
+        font-size: 0.9rem;
+        color: ${(props) => props.theme['cinza-300']};
+      }
+
     }
 
-    strong {
-      font-size: 1.3rem;
-    }
 
-    p {
-      font-size: 0.9rem;
-    }
 
     article {
       margin-top: 1rem;
       margin-bottom: 1rem;
       padding: 0.5rem 0.5rem 0.5rem 1rem;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       color: ${(props) => props.theme['cinza-300']};
       background: ${(props) => props.theme['cinza-200']};
       border-radius: 10px;
       font-weight: 500;
+      
     }
 
     table tr {
@@ -145,25 +155,23 @@ export const ColorInfo = styled.td<ColorInfoProps>`
     `};
 `
 
-export const WarningCard = styled.div<WarningCardProps>`
-span {
+export const WarningCard = styled.span<WarningCardProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  padding: 0.5rem -1rem 0.5rem 1rem;
   font-size: 0.8rem;
-
   border-radius: 5px;
   border: 1px solid;
   border-left-width: 0.45rem;
   font-weight: 500;
   font-size: 0.7rem;
-  width: auto;
 
-  svg {
+  svg.warning {
     position: relative;
-    right: 0.4rem;
-}
+    top: 0;
+    margin-right: 2rem;
+  }
 
   ${(props) =>
     props.variant === 'superior' &&
