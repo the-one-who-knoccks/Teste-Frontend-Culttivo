@@ -77,12 +77,13 @@ export function Carousel() {
 
   return (
     <Container>
-      <button>
+      <button className="left">
         <ArrowLeft onClick={clilcarParaEsquerda} />
       </button>
-      <button onClick={clicarParaDireita}>
+      <button className="right" onClick={clicarParaDireita}>
         <ArrowRight />
       </button>
+
       <div className="carousel" ref={carrossel}>
         {dados.map((item, i) => (
           <CarouselCard key={i}>

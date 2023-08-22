@@ -7,7 +7,6 @@ export const HeaderContainer = styled.header`
 export const HeaderContent = styled.div`
   margin-bottom: 5rem;
   padding: 2rem;
-
   display: flex;
   align-items: center;
   justify-content: center;

@@ -7,10 +7,45 @@ export const Container = styled.section`
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
+    position: relative;
+    bottom: 1.5rem;
 
     ::-webkit-scrollbar {
       display: none;
     }
+  }
+
+  button.left {
+    display: flex;
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    right: 3rem;
+    top: 20rem;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid;
+    border-radius: 20px;
+    color: ${(props) => props.theme['verde-100']};
+    background: transparent;
+    cursor: pointer;
+  }
+
+  button.right {
+    display: flex;
+    width: 2rem;
+    height: 2rem;
+    margin-left: 100%;
+    position: relative;
+    top: 18.5rem;
+    left: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid;
+    border-radius: 20px;
+    color: ${(props) => props.theme['verde-100']};
+    background: transparent;
+    cursor: pointer;
   }
 `
 
