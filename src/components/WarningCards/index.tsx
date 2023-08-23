@@ -10,7 +10,6 @@ interface Temperature {
 
 interface WeatherData {
   temperature: Temperature
-  // Outras propriedades relevantes da resposta da API
 }
 
 interface WeatherResponse {
@@ -18,42 +17,43 @@ interface WeatherResponse {
 }
 
 export function Alert() {
-  const [weatherData, setWeatherData] = useState<WeatherData[]>([])
+  const [DadosTempo, setarDadosTempo] = useState<WeatherData[]>([])
 
   useEffect(() => {
     axios
       .get<WeatherResponse>(
         'http://apiadvisor.climatempo.com.br/api/v1/forecast/locale/6754/days/15?token=82e86be1f7896dd48ad916a8bf79a997',
+        { method: 'no-cors' },
       )
       .then((response) => {
-        const responseData = response.data.data
-        const dataAsArray = Object.values(responseData)
-        setWeatherData(dataAsArray)
+        const respostaDados = response.data.data
+        const dadosArray = Object.values(respostaDados)
+        setarDadosTempo(dadosArray)
       })
       .catch((error) => {
         console.error('Error fetching data:', error)
       })
   }, [])
 
-  if (weatherData.length === 0) {
+  if (DadosTempo.length === 0) {
     return <p>Falha ao carregar dados...</p>
   }
 
-  const maxTemperatures = weatherData.map((data) => data.temperature.max)
-  const minTemperatures = weatherData.map((data) => data.temperature.min)
+  const maxTemperaturas = DadosTempo.map((data) => data.temperature.max)
+  const minTemperatures = DadosTempo.map((data) => data.temperature.min)
 
-  const averageMaxTemperature =
-    maxTemperatures.reduce((acc, curr) => acc + curr, 0) /
-    maxTemperatures.length
+  const mediaMaxTemperatura =
+    maxTemperaturas.reduce((acc, curr) => acc + curr, 0) /
+    maxTemperaturas.length
 
-  const averageMinTemperature =
+  const mediaMinTemperatura =
     minTemperatures.reduce((acc, curr) => acc + curr, 0) /
     minTemperatures.length
 
-  const currentDayData = weatherData[0]
+  const dadosAtuais = DadosTempo[0]
   return (
     <div>
-      {currentDayData.temperature.max === averageMaxTemperature ? (
+      {dadosAtuais.temperature.max <= mediaMinTemperatura ? (
         <WarningCards variant="superior">
           <Warning className="warning" size={60} />
           Temperatura máxima deste dia será superior a máxima média do período.

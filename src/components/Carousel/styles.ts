@@ -79,7 +79,7 @@ export const CarouselCard = styled.div`
      width: 3.5rem;
 
      position: relative;
-     top: 1.5rem;
+     top: 1.1rem;
     }
 
     div {

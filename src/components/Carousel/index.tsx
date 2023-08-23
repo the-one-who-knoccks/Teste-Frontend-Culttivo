@@ -52,10 +52,10 @@ export function Carousel() {
         'http://apiadvisor.climatempo.com.br/api/v1/forecast/locale/6754/days/15?token=82e86be1f7896dd48ad916a8bf79a997',
       )
       .then((response) => {
-        const responseData = response.data.data as Record<string, WeatherData>
-        const dataAsArray = Object.values(responseData)
+        const respostaDados = response.data.data as Record<string, WeatherData>
+        const dadosArray = Object.values(respostaDados)
 
-        setarDados(dataAsArray)
+        setarDados(dadosArray)
       })
       .catch((error) => {
         console.error('Error fetching data:', error)
@@ -92,7 +92,7 @@ export function Carousel() {
               <img src="src/assets/sol-com-nuvens.png" alt="" />
               <div>
                 <strong>{item.date_br}</strong>
-                <p>Terça-feira</p>
+                <p>...</p>
               </div>
 
               <article>{item.text_icon.text.phrase.reduced}</article>
