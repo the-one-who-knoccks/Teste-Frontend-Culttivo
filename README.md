@@ -25,6 +25,18 @@
 
 
 
+<p align="center">
+    <img src="https://ik.imagekit.io/hld13bjzb1/Captura%20de%20tela%20de%202023-08-23%2010-31-17_4Nog7rcjA.png?updatedAt=1692797559204" />
+</p>
+
+
+<p align="center">
+    <img src="https://ik.imagekit.io/hld13bjzb1/Captura%20de%20tela%20de%202023-08-23%2010-30-56_ynft_lhKo.png?updatedAt=1692797559113" />
+</p>
+
+
+
+
 <h2 id="tecnologias">🔧 <b>Ferramentas:</b></h2>
 
 - React
