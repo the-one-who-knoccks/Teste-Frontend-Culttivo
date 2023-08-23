@@ -25,12 +25,6 @@
 
 
 
-<p align="center">
-  <img alt="Preview" src=".github/preview.png">
-</p>
-
-
-
 <h2 id="tecnologias">🔧 <b>Ferramentas:</b></h2>
 
 - React
@@ -75,7 +69,8 @@ $ npm install
 $ npm run dev
 ```
 
-
+## Observação
+#### Não consegui habilitar o cors na api fornecida,então foi preciso o uso da extensão CORS Test para testar aplicação no Chrome e Cors Everywhere no Firefox
 
 
 
