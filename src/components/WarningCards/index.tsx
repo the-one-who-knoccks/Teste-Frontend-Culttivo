@@ -53,7 +53,7 @@ export function Alert() {
   const currentDayData = weatherData[0]
   return (
     <div>
-      {averageMinTemperature !== averageMaxTemperature ? (
+      {currentDayData.temperature.max === averageMaxTemperature ? (
         <WarningCards variant="superior">
           <Warning className="warning" size={60} />
           Temperatura máxima deste dia será superior a máxima média do período.
