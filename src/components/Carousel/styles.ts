@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 
 export const Container = styled.section`
   width: 1090px;
+  border: none;
 
   div {
     display: flex;
@@ -58,6 +59,8 @@ export const CarouselCard = styled.div`
   height: 30rem;
   margin-top: 2rem;
   margin-left: 1.5rem;
+  display: absolute;
+  right: 0.5rem;
   flex: none;
 
   background: ${(props) => props.theme.white};

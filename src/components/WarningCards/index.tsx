@@ -22,8 +22,7 @@ export function Alert() {
   useEffect(() => {
     axios
       .get<WeatherResponse>(
-        'http://apiadvisor.climatempo.com.br/api/v1/forecast/locale/6754/days/15?token=82e86be1f7896dd48ad916a8bf79a997',
-        { method: 'no-cors' },
+        'http://apiadvisor.climatempo.com.br/api/v1/forecast/locale/6754/days/7?token=143ce6ea1c2a420aeed615812c59bf15',
       )
       .then((response) => {
         const respostaDados = response.data.data
@@ -53,15 +52,15 @@ export function Alert() {
   const dadosAtuais = DadosTempo[0]
   return (
     <div>
-      {dadosAtuais.temperature.max <= mediaMinTemperatura ? (
+      {dadosAtuais.temperature.max >= mediaMaxTemperatura ? (
         <WarningCards variant="superior">
           <Warning className="warning" size={60} />
-          Temperatura máxima deste dia será superior a máxima média do período.
+          Temperatura máxima deste dia será superior à média máxima do período.
         </WarningCards>
       ) : (
         <WarningCards variant="inferior">
           <WarningCircle className="warning" size={60} />
-          Temperatura máxima deste dia será inferior a minima média do período.
+          Temperatura máxima deste dia será inferior à média mínima do período.
         </WarningCards>
       )}
     </div>

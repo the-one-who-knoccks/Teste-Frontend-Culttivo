@@ -36,7 +36,7 @@
 
 ## Antes de rodar a aplicação
 ### Antes de rodar a aplicação você deve logar no site da api do climatempo
-https://advisor.climatempo.com.br/ e cadastrar um token. Após cadastrado, gerar um token e subistuir o link da api nos componentes Header, Carousel e WarningCards com otoken existente na api que deverá ficar assim:
+https://advisor.climatempo.com.br/ e se cadastrar para obter um token. Após cadastrado, gerar um token e subistuir o link da api nos componentes Header, Carousel e WarningCards com o token existente na api que deverá ficar assim:
 
 https://piadvisor.climatempo.com.br/api/v1/forecast/locale/6754/days/15?token= + token gerado
 
