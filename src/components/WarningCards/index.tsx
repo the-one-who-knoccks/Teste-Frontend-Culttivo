@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { WarningCards } from './styles'
 import { Warning, WarningCircle } from 'phosphor-react'
@@ -24,7 +23,7 @@ export function Alert() {
   useEffect(() => {
     axios
       .get<WeatherResponse>(
-        'http://apiadvisor.climatempo.com.br/api/v1/forecast/locale/6754/days/15?token=26fe4985e1cf1cee5e7cfdcf7e6b62e3',
+        'http://apiadvisor.climatempo.com.br/api/v1/forecast/locale/6754/days/15?token=82e86be1f7896dd48ad916a8bf79a997',
       )
       .then((response) => {
         const responseData = response.data.data
@@ -37,7 +36,7 @@ export function Alert() {
   }, [])
 
   if (weatherData.length === 0) {
-    return <p>Loading...</p>
+    return <p>Falha ao carregar dados...</p>
   }
 
   const maxTemperatures = weatherData.map((data) => data.temperature.max)
@@ -51,11 +50,10 @@ export function Alert() {
     minTemperatures.reduce((acc, curr) => acc + curr, 0) /
     minTemperatures.length
 
-  const currentDayData = weatherData[0] // Suponha que você queira verificar o primeiro dia
-  console.log(currentDayData.temperature)
+  const currentDayData = weatherData[0]
   return (
     <div>
-      {currentDayData.temperature.max <= averageMaxTemperature ? (
+      {averageMinTemperature !== averageMaxTemperature ? (
         <WarningCards variant="superior">
           <Warning className="warning" size={60} />
           Temperatura máxima deste dia será superior a máxima média do período.

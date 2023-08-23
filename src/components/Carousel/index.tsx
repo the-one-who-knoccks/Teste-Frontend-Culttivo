@@ -1,8 +1,9 @@
-import { ArrowLeft, ArrowRight, Sun } from 'phosphor-react'
+import { ArrowLeft, ArrowRight } from 'phosphor-react'
 import { CarouselCard, Container, ColorInfo } from './styles'
 import { FormEvent, MutableRefObject, useEffect, useRef, useState } from 'react'
 import axios from 'axios'
 import Alert from '../WarningCards'
+import { Footer } from '../Footer'
 
 interface WeatherData {
   id: string
@@ -48,7 +49,7 @@ export function Carousel() {
   useEffect(() => {
     axios
       .get(
-        'http://apiadvisor.climatempo.com.br/api/v1/forecast/locale/6754/days/15?token=26fe4985e1cf1cee5e7cfdcf7e6b62e3',
+        'http://apiadvisor.climatempo.com.br/api/v1/forecast/locale/6754/days/15?token=82e86be1f7896dd48ad916a8bf79a997',
       )
       .then((response) => {
         const responseData = response.data.data as Record<string, WeatherData>
@@ -88,10 +89,10 @@ export function Carousel() {
         {dados.map((item, i) => (
           <CarouselCard key={i}>
             <header>
-              <Sun size={30} color="#ccc000" />
+              <img src="src/assets/sol-com-nuvens.png" alt="" />
               <div>
                 <strong>{item.date_br}</strong>
-                <p></p>
+                <p>Terça-feira</p>
               </div>
 
               <article>{item.text_icon.text.phrase.reduced}</article>
@@ -148,6 +149,7 @@ export function Carousel() {
           </CarouselCard>
         ))}
       </div>
+      <Footer />
     </Container>
   )
 }

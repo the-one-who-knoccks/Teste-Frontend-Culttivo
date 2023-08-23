@@ -14,12 +14,10 @@ export const WarningCards = styled.span<WarningCardProps>`
   border: 1px solid;
   border-left-width: 0.45rem;
   font-weight: 500;
-  font-size: 0.7rem;
+  margin-top: 3.5rem;
 
   svg.warning {
-    position: relative;
-    top: 0;
-    margin-right: 2rem;
+    margin: 0 0.9rem;
   }
 
   ${(props) =>

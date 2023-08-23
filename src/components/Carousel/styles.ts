@@ -21,7 +21,7 @@ export const Container = styled.section`
     height: 2rem;
     position: relative;
     right: 3rem;
-    top: 20rem;
+    top: 18.2rem;
     align-items: center;
     justify-content: center;
     border: 2px solid;
@@ -37,7 +37,7 @@ export const Container = styled.section`
     height: 2rem;
     margin-left: 100%;
     position: relative;
-    top: 18.5rem;
+    top: 16rem;
     left: 1.5rem;
     align-items: center;
     justify-content: center;
@@ -55,8 +55,7 @@ interface ColorInfoProps {
 
 export const CarouselCard = styled.div`
   width: 21rem;
-
-  margin-bottom: 1rem;
+  height: 30rem;
   margin-top: 2rem;
   margin-left: 1.5rem;
   flex: none;
@@ -69,17 +68,18 @@ export const CarouselCard = styled.div`
 
   header {
     display: grid;
-    margin-top: -2rem;
+    margin-top: -2.5rem;
 
     align-items: center;
     justify-content: center;
 
     color: ${(props) => props.theme['cinza-400']};
 
-    svg {
+    img {
+     width: 3.5rem;
+
      position: relative;
-     top: 2rem;
-     left: 1rem;
+     top: 1.5rem;
     }
 
     div {
@@ -99,9 +99,9 @@ export const CarouselCard = styled.div`
 
 
     article {
-      margin-top: 2.5rem;
+      margin-top: -0.5rem;
       margin-bottom: 0.5rem;
-      height: 3.5rem;
+      height: auto;
 
       padding: 0.5rem 0.5rem 0.5rem 1rem;
       font-size: 0.8rem;
@@ -152,7 +152,7 @@ export const ColorInfo = styled.td<ColorInfoProps>`
   border-radius: 0.3rem;
   padding: 0.5rem 0.5rem 0.3rem;
   border-left-width: 0.35rem;
-  width: 45%;
+  width: 50%;
   font-weight: 500;
   ${(props) =>
     props.variant === 'max' &&

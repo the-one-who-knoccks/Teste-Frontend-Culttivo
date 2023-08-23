@@ -12,12 +12,16 @@ export function Header() {
   useEffect(() => {
     axios
       .get(
-        'http://apiadvisor.climatempo.com.br/api/v1/forecast/locale/6754/days/15?token=26fe4985e1cf1cee5e7cfdcf7e6b62e3',
+        'http://apiadvisor.climatempo.com.br/api/v1/forecast/locale/6754/days/15?token=82e86be1f7896dd48ad916a8bf79a997',
       )
       .then((response) => {
         setarDados(response.data)
       })
   }, [])
+
+  if (!dados) {
+    return <></>
+  }
 
   return (
     <HeaderContainer>
