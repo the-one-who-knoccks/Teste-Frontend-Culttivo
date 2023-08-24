@@ -23,6 +23,8 @@
 
 - ### Projeto desenvolvido para o teste front-end da empresa Culttivo.
 
+A aplicação consiste em consumir os dados da api do climatempo e exibir informações como data, temperatura miníma e máxima, humidade e etc... em um card no carrossel para os próximos 7 dias.
+
 
 
 <p align="center">
@@ -58,6 +60,10 @@ apos isso, rodar o comando abaixo para cadastrar a cidade utilizada na conta do 
 curl -X PUT      'http://apiadvisor.climatempo.com.br/api-manager/user-token/82e86be1f7896dd48ad916a8bf79a997/locales'          -H 'Content-Type: application/x-www-form-urlencoded'          -d 'localeId[]=6754'
 ```
 
+
+## Deploy da aplicação: 
+
+https://culttivo-clima.azurewebsites.net/
 
 ## Como rodar o projeto localmente
 
