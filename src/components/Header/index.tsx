@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { HeaderContainer, HeaderContent } from './styles'
 import axios from 'axios'
+import { LoadingSpinner } from '../Loading'
 
 interface HeaderData {
   name: string
@@ -20,7 +21,13 @@ export function Header() {
   }, [])
 
   if (!dados) {
-    return <></>
+    return (
+      <>
+        <HeaderContent>
+          <LoadingSpinner />
+        </HeaderContent>
+      </>
+    )
   }
 
   return (

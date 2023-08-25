@@ -72,83 +72,84 @@ export function Carousel() {
     carrossel.current.scrollLeft += carrossel.current.offsetWidth
   }
 
-  if (!dados) {
-    return <p>Carregando...</p>
-  }
-
   return (
     <Container>
-      <button className="left">
-        <ArrowLeft onClick={clilcarParaEsquerda} />
-      </button>
-      <button className="right" onClick={clicarParaDireita}>
-        <ArrowRight />
-      </button>
+      {dados.length === undefined ? (
+        <>
+          <button className="left">
+            <ArrowLeft onClick={clilcarParaEsquerda} />
+          </button>
+          <button className="right" onClick={clicarParaDireita}>
+            <ArrowRight />
+          </button>
+          <div className="carousel" ref={carrossel}>
+            {dados.map((item, i) => (
+              <CarouselCard key={i}>
+                <header>
+                  <img src="src/assets/sol-com-nuvens.png" alt="" />
+                  <div>
+                    <strong>{item.date_br}</strong>
+                    <p>...</p>
+                  </div>
 
-      <div className="carousel" ref={carrossel}>
-        {dados.map((item, i) => (
-          <CarouselCard key={i}>
-            <header>
-              <img src="src/assets/sol-com-nuvens.png" alt="" />
-              <div>
-                <strong>{item.date_br}</strong>
-                <p>...</p>
-              </div>
+                  <article>{item.text_icon.text.phrase.reduced}</article>
 
-              <article>{item.text_icon.text.phrase.reduced}</article>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th>Temperatura:</th>
 
-              <table>
-                <tbody>
-                  <tr>
-                    <th>Temperatura:</th>
+                        <ColorInfo variant="min">
+                          {item.temperature.min}°c
+                        </ColorInfo>
 
-                    <ColorInfo variant="min">
-                      {item.temperature.min}°c
-                    </ColorInfo>
+                        <ColorInfo variant="max">
+                          {item.temperature.max}°c
+                        </ColorInfo>
+                      </tr>
+                      <tr className="line" />
+                    </tbody>
 
-                    <ColorInfo variant="max">
-                      {item.temperature.max}°c
-                    </ColorInfo>
-                  </tr>
-                  <tr className="line" />
-                </tbody>
+                    <tbody>
+                      <tr>
+                        <th>Umidade:</th>
+                        <ColorInfo variant="umidade">
+                          {item.humidity.min}% - {item.humidity.max}%
+                        </ColorInfo>
+                      </tr>
+                      <tr className="line" />
+                    </tbody>
 
-                <tbody>
-                  <tr>
-                    <th>Umidade:</th>
-                    <ColorInfo variant="umidade">
-                      {item.humidity.min}% - {item.humidity.max}%
-                    </ColorInfo>
-                  </tr>
-                  <tr className="line" />
-                </tbody>
+                    <tbody>
+                      <tr>
+                        <th>Sol:</th>
+                        <ColorInfo variant="nascer/pordosol">
+                          {item.sun.sunrise.toString().substring(0, 5)} -{' '}
+                          {item.sun.sunset.toString().substring(0, 5)}
+                        </ColorInfo>
+                      </tr>
+                      <tr className="line" />
+                    </tbody>
 
-                <tbody>
-                  <tr>
-                    <th>Sol:</th>
-                    <ColorInfo variant="nascer/pordosol">
-                      {item.sun.sunrise.toString().substring(0, 5)} -{' '}
-                      {item.sun.sunset.toString().substring(0, 5)}
-                    </ColorInfo>
-                  </tr>
-                  <tr className="line" />
-                </tbody>
-
-                <tbody>
-                  <tr>
-                    <th>Chuva:</th>
-                    <ColorInfo variant="chuva">
-                      {item.rain.probability}%
-                    </ColorInfo>
-                  </tr>
-                  <tr className="line" />
-                </tbody>
-              </table>
-              <Alert />
-            </header>
-          </CarouselCard>
-        ))}
-      </div>
+                    <tbody>
+                      <tr>
+                        <th>Chuva:</th>
+                        <ColorInfo variant="chuva">
+                          {item.rain.probability}%
+                        </ColorInfo>
+                      </tr>
+                      <tr className="line" />
+                    </tbody>
+                  </table>
+                  <Alert />
+                </header>
+              </CarouselCard>
+            ))}
+          </div>
+        </>
+      ) : (
+        <h1>Ops! Falha ao carregar os dados da api...</h1>
+      )}
       <Footer />
     </Container>
   )

@@ -4,6 +4,14 @@ export const Container = styled.section`
   width: 1090px;
   border: none;
 
+  h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15rem;
+    color: ${(props) => props.theme['cinza-400']};
+  }
+
   div {
     display: flex;
     overflow-x: auto;
